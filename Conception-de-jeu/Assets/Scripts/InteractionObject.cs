@@ -49,6 +49,6 @@ public class InteractionObject : MonoBehaviour
             Debug.Log("Ui à afficher !");
             uiObject.SetActive(true);
             uiText.SetText(descriptionText);
-        }
+        } 
     }
 }

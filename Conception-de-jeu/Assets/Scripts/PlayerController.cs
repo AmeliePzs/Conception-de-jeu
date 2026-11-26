@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private InputAction moveInput;
     private InputAction runInput;
 
-    private InputAction jumpInput;
+    //private InputAction jumpInput;
     private bool jumped = false;
     
     private float currentMoveSpeed = 0.0f;
@@ -36,8 +36,8 @@ public class PlayerController : MonoBehaviour
         moveInput = InputSystem.actions.FindAction("Move");
         runInput = InputSystem.actions.FindAction("Sprint");
 
-        jumpInput = InputSystem.actions.FindAction("Jump");
-        jumpInput.started += Jumped;
+        //jumpInput = InputSystem.actions.FindAction("Jump");
+        //jumpInput.started += Jumped;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
