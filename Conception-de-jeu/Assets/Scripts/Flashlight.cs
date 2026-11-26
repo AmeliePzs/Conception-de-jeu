@@ -25,7 +25,7 @@ public class Flashlight : MonoBehaviour
 
     private void Update()
     {
-        if (lightInput.IsPressed()) 
+        if (lightInput.WasPressedThisFrame()) 
         {
             StartCoroutine(SwitchLight());
         }

@@ -1,12 +1,25 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using TMPro;
 
 public class InteractionObject : MonoBehaviour
 {
-    //public GameObject uiObject;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] GameObject uiObject;
+
+    private InputAction interactInput;
+
+    private bool isPlayer = false;
+
+    //Pour personnaliser le texte de l'UI
+    [SerializeField] private TMP_Text uiText;
+    [SerializeField] string descriptionText;
+
     void Start()
     {
         //uiObject.SetActive(false);
+        interactInput = InputSystem.actions.FindAction("Interact");
+        uiText = uiObject.GetComponentInChildren<TextMeshPro>();
+        Debug.Log(uiText.text);
     }
 
     private void OnTriggerEnter(Collider player)
@@ -14,13 +27,34 @@ public class InteractionObject : MonoBehaviour
         // Vérifie si c'est bien le joueur qui est entré
         if(player.gameObject.tag == "Player")
         {
-           // uiObject.SetActive(true);
             Debug.Log("Joueur entré !");
+            isPlayer = true;
         }
     }
-    // Update is called once per frame
+
+    private void OnTriggerExit(Collider player)
+    {
+        // Vérifie si c'est bien le joueur qui est sorti
+        if (player.gameObject.tag == "Player")
+        {
+            uiObject.SetActive(false);
+            Debug.Log("Joueur sortie !");
+            isPlayer = false;
+
+        }
+    }
     void Update()
     {
-        
+        if (interactInput.IsPressed() && isPlayer)
+        {
+            Debug.Log("Ui à afficher !");
+            uiObject.SetActive(true);
+            uiText.SetText(descriptionText);
+        }
+    }
+
+    void SetText() 
+    {
+        uiText.SetText(descriptionText);
     }
 }
