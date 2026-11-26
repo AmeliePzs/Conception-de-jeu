@@ -17,10 +17,8 @@ public class InteractionObject : MonoBehaviour
 
     void Start()
     {
-        //uiObject.SetActive(false);
+        uiObject.SetActive(false);
         interactInput = InputSystem.actions.FindAction("Interact");
-        //uiText = uiObject.GetComponentInChildren<TextMeshPro>();
-        Debug.Log(uiText.text);
     }
 
     private void OnTriggerEnter(Collider player)
@@ -52,10 +50,5 @@ public class InteractionObject : MonoBehaviour
             uiObject.SetActive(true);
             uiText.SetText(descriptionText);
         }
-    }
-
-    void SetText() 
-    {
-        uiText.SetText(descriptionText);
     }
 }
