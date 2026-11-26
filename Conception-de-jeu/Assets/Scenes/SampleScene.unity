@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 252390390}
   - component: {fileID: 252390389}
   - component: {fileID: 252390391}
-  - component: {fileID: 252390392}
+  - component: {fileID: 252390393}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -203,33 +203,24 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &252390392
-Rigidbody:
+--- !u!114 &252390393
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252390388}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 1
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b76d11b4fb7db40b3719bd73da232b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  WalkSpeed: 5.5
+  RunningSpeed: 9
+  JumpForce: 8
+  Gravity: 20
+  LookSensitivity: 0.2
+  LookAngleLimit: 90
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +731,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.47, z: 0}
-  m_LocalScale: {x: 18.751, y: 1, z: 14.275}
+  m_LocalScale: {x: 71.92508, y: 1, z: 52.149426}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

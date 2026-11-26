@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private InputAction runInput;
 
     private InputAction jumpInput;
+    private bool jumped = false;
     
     private float currentMoveSpeed = 0.0f;
     private Vector3 moveDirection = Vector3.zero;
@@ -34,7 +35,9 @@ public class PlayerController : MonoBehaviour
 
         moveInput = InputSystem.actions.FindAction("Move");
         runInput = InputSystem.actions.FindAction("Sprint");
+
         jumpInput = InputSystem.actions.FindAction("Jump");
+        jumpInput.started += Jumped;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -47,8 +50,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 moveVector = moveInput.ReadValue<Vector2>();
+        Vector2 mouseDelta = new Vector2(Mouse.current.delta.x.ReadValue(), Mouse.current.delta.y.ReadValue());
 
+        if (!characterController.isGrounded)
+        {
+            jumped = false;
+        }
+
+        currentMoveSpeed = runInput.IsPressed() ? RunningSpeed : WalkSpeed;
         HandleMovement(moveVector);
+        HandleLooking(mouseDelta);
     }
 
     private void HandleMovement(Vector2 moveVector)
@@ -61,8 +72,29 @@ public class PlayerController : MonoBehaviour
         Vector2 newSpeed = new Vector2(moveVector.y * currentMoveSpeed, moveVector.x * currentMoveSpeed);
 
         moveDirection = (forward * newSpeed.x) + (right * newSpeed.y);
-        moveDirection.y = oldY;
+        moveDirection.y = (jumped && characterController.isGrounded) ? currentMoveSpeed : oldY;
+
+        if (!characterController.isGrounded) 
+        {
+            moveDirection.y -= Gravity * Time.deltaTime;
+        }
 
         characterController.Move(moveDirection * Time.deltaTime);
+    }
+
+    private void Jumped(InputAction.CallbackContext _) // "_" car la variable de retour est inconnue
+    {
+        jumped = true;
+    }
+
+    private void HandleLooking(Vector2 mouseDelta) 
+    {
+        lookAngle += -mouseDelta.y * LookSensitivity;
+        lookAngle = Mathf.Clamp(lookAngle, -LookAngleLimit, LookAngleLimit); //Empêche de faire une rotation camera de 360° sur l'axe y
+
+        // maj de la camera en fonction de l'angle
+        mainCamera.transform.localRotation = Quaternion.Euler(lookAngle, 0, 0); // Pour Rotation haut et bas
+        transform.rotation *= Quaternion.Euler(0, mouseDelta.x * LookSensitivity, 0); // pour Rotation Gauche et Droite, tout le character
+
     }
 }
