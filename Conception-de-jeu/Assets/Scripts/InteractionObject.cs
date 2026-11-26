@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class InteractionObject : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class InteractionObject : MonoBehaviour
     {
         //uiObject.SetActive(false);
         interactInput = InputSystem.actions.FindAction("Interact");
-        uiText = uiObject.GetComponentInChildren<TextMeshPro>();
+        //uiText = uiObject.GetComponentInChildren<TextMeshPro>();
         Debug.Log(uiText.text);
     }
 
