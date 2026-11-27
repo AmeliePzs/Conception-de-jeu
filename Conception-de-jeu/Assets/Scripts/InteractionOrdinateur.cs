@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class InteractionOrdinateur : MonoBehaviour
 {
     [SerializeField] GameObject uiObject;
+    [SerializeField] GameObject hudObject;
 
     private InputAction interactInput;
 
     private bool isPlayer = false;
 
     //Pour personnaliser le texte de l'UI
-    [SerializeField] private TMP_Text envoyeurTmp;
-    [SerializeField] string envoyeurText;
+    [SerializeField] private TMP_Text expediteurTmp;
+    [SerializeField] string expediteurText;
 
     [SerializeField] private TMP_Text destinataireTmp;
     [SerializeField] string destinataireText;
@@ -30,6 +31,7 @@ public class InteractionOrdinateur : MonoBehaviour
     void Start()
     {
         uiObject.SetActive(false);
+        hudObject.SetActive(false);
         interactInput = InputSystem.actions.FindAction("Interact");
 
     }
@@ -40,6 +42,7 @@ public class InteractionOrdinateur : MonoBehaviour
         if(player.gameObject.tag == "Player")
         {
             Debug.Log("Joueur entré !");
+            hudObject.SetActive(true);
             isPlayer = true;
         }
     }
@@ -50,6 +53,7 @@ public class InteractionOrdinateur : MonoBehaviour
         if (player.gameObject.tag == "Player")
         {
             uiObject.SetActive(false);
+            hudObject.SetActive(false);
             Debug.Log("Joueur sortie !");
             isPlayer = false;
 
@@ -67,7 +71,7 @@ public class InteractionOrdinateur : MonoBehaviour
 
     private void SetTexteOrdinateur()
     {
-        envoyeurTmp.SetText(envoyeurText);
+        expediteurTmp.SetText(expediteurText);
 
         destinataireTmp.SetText(destinataireText);
 

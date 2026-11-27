@@ -7,17 +7,20 @@ public class InteractionObject : MonoBehaviour
 {
     [SerializeField] GameObject uiObject;
 
+    [SerializeField] GameObject hudObject;
+
     private InputAction interactInput;
 
     private bool isPlayer = false;
 
     //Pour personnaliser le texte de l'UI
-    [SerializeField] private TMP_Text uiText;
+    [SerializeField] private TMP_Text descriptionTmp;
     [SerializeField] string descriptionText;
 
     void Start()
     {
         uiObject.SetActive(false);
+        hudObject.SetActive(false);
         interactInput = InputSystem.actions.FindAction("Interact");
     }
 
@@ -27,6 +30,7 @@ public class InteractionObject : MonoBehaviour
         if(player.gameObject.tag == "Player")
         {
             Debug.Log("Joueur entré !");
+            hudObject.SetActive(true);
             isPlayer = true;
         }
     }
@@ -37,6 +41,7 @@ public class InteractionObject : MonoBehaviour
         if (player.gameObject.tag == "Player")
         {
             uiObject.SetActive(false);
+            hudObject.SetActive(false);
             Debug.Log("Joueur sortie !");
             isPlayer = false;
 
@@ -48,7 +53,7 @@ public class InteractionObject : MonoBehaviour
         {
             Debug.Log("Ui à afficher !");
             uiObject.SetActive(true);
-            uiText.SetText(descriptionText);
+            descriptionTmp.SetText(descriptionText);
         } 
     }
 }
