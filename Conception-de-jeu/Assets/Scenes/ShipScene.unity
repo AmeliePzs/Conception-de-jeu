@@ -8715,7 +8715,7 @@ MonoBehaviour:
     tr\xE8s prometteuse ! Je pense que nous pouvons en faire quelque chose ! \\nMon
     \xE9quipe a r\xE9cup\xE9r\xE9 plusieurs boutures ainsi que, ce qui semblerait,
     \xEAtre des fruits. \\nJe n'ai jamais rien vu de semblable, m\xEAme compar\xE9
-    aux pr\xE9c\xE9dents sp\xE9cimens. n\\Bonne soir\xE9e, Andr\xE9e"
+    aux pr\xE9c\xE9dents sp\xE9cimens. \\nBonne soir\xE9e, Andr\xE9e"
 --- !u!1001 &1158397864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10549,9 +10549,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6707563269787529944, guid: 722bb9a11ef1bd34fb9d9c1f90e7849a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2093945777}
-    - targetCorrespondingSourceObject: {fileID: 6707563269787529944, guid: 722bb9a11ef1bd34fb9d9c1f90e7849a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2093945778}
   m_SourcePrefab: {fileID: 100100000, guid: 722bb9a11ef1bd34fb9d9c1f90e7849a, type: 3}
 --- !u!4 &1336517043 stripped
 Transform:
@@ -17012,22 +17009,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2675799, y: 1.0542945, z: 1.1940697}
   m_Center: {x: 0.35083097, y: 0.527146, z: 0.2948975}
---- !u!114 &2093945778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2093945773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2452e84a70a0d48a7e028cd23e45f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
-  uiObject: {fileID: 1042886555}
-  hudObject: {fileID: 32941556}
-  descriptionTmp: {fileID: 345373036}
-  descriptionText: 
 --- !u!1 &2104990607
 GameObject:
   m_ObjectHideFlags: 0
