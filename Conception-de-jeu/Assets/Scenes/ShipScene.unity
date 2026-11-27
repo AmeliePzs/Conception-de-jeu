@@ -6510,6 +6510,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1008655450}
+  - component: {fileID: 1008655451}
+  - component: {fileID: 1008655452}
   m_Layer: 0
   m_Name: Palmiers
   m_TagString: Untagged
@@ -6538,6 +6540,43 @@ Transform:
   - {fileID: 2129281405}
   m_Father: {fileID: 1536919530}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1008655451
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008655449}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.354311, y: 1, z: 3.4285374}
+  m_Center: {x: -1.1771555, y: 0, z: 0.8043237}
+--- !u!114 &1008655452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008655449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2452e84a70a0d48a7e028cd23e45f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
+  uiObject: {fileID: 1042886555}
+  hudObject: {fileID: 32941556}
+  descriptionTmp: {fileID: 345373036}
+  descriptionText: 
 --- !u!1001 &1020342994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8462,8 +8501,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2719183, y: 1.5382099, z: 1.6673286}
-  m_Center: {x: -0.36209473, y: -0.17056128, z: 0.5575266}
+  m_Size: {x: 1.3596596, y: 1.5382099, z: 1.6673286}
+  m_Center: {x: -0.40596533, y: -0.17056131, z: 0.5575266}
 --- !u!114 &1184699147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9677,6 +9716,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.423
       objectReference: {fileID: 0}
+    - target: {fileID: 5663663404500764638, guid: 722bb9a11ef1bd34fb9d9c1f90e7849a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8489101684460533869, guid: 722bb9a11ef1bd34fb9d9c1f90e7849a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -9747,6 +9790,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6707563269787529944, guid: 722bb9a11ef1bd34fb9d9c1f90e7849a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2093945777}
+    - targetCorrespondingSourceObject: {fileID: 6707563269787529944, guid: 722bb9a11ef1bd34fb9d9c1f90e7849a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2093945778}
   m_SourcePrefab: {fileID: 100100000, guid: 722bb9a11ef1bd34fb9d9c1f90e7849a, type: 3}
 --- !u!4 &1336517043 stripped
 Transform:
@@ -15798,8 +15844,24 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.83019507, y: 0.38762784, z: 0.8016791}
-  m_Center: {x: 0.13213967, y: 0.19381273, z: 0.09870299}
+  m_Size: {x: 1.2675799, y: 1.0542945, z: 1.1940697}
+  m_Center: {x: 0.35083097, y: 0.527146, z: 0.2948975}
+--- !u!114 &2093945778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093945773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2452e84a70a0d48a7e028cd23e45f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
+  uiObject: {fileID: 1042886555}
+  hudObject: {fileID: 32941556}
+  descriptionTmp: {fileID: 345373036}
+  descriptionText: 
 --- !u!1 &2104990607
 GameObject:
   m_ObjectHideFlags: 0
